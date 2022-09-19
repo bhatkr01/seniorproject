@@ -1,0 +1,4 @@
+#swp files 
+*.swp
+*.env
+env/
