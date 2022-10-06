@@ -27,7 +27,7 @@ urlpatterns = format_suffix_patterns([
 #using routers
 
 router=DefaultRouter()
-router.register(r'products_api', ProductModelViewSet, basename="products")
+router.register(r'', ProductModelViewSet, basename="products")
 
 urlpatterns=[
         path('', include(router.urls)),

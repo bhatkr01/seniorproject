@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+from datetime import *
 import os
 
 load_dotenv()
@@ -43,11 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +59,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SIMPLE_JWT={
+        'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+        'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+        'ROTATE_REFRESH_TOKENS': False,
+        'BLACKLIST_AFTER_ROTATION': False,
+        'UPDATE_LAST_LOGIN': False,
+        'AUTH_HEADER_TYPES': ('Bearer', 'JWT'),
+        }
 
 ROOT_URLCONF = 'luthermarketplace.urls'
 
@@ -110,6 +123,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+##Rest Framework global permissions
+
+REST_FRAMEWORK={
+        'DEFAULT_AUTHENTICATION_CLASSES':(
+            'rest_framework_simplejwt.authentication.JWTAuthentication',
+            ),
+        'DEFAULT_PERMISSION_CLASSES':[
+            'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+            ]
+        }
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -153,3 +176,15 @@ AUTH_USER_MODEL = 'accounts.MyUser'
 
 AUTHENTICATION_BACKENDS=('django.contrib.auth.backends.ModelBackend',
                          'accounts.backend.SettingsBackend',)
+
+ALLOWED_HOSTS = [
+        '*',
+        'luthernursing.herokuapp.com',
+        ]
+CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://localhost:3000",
+        "http://localhost:8000",
+        "https://luthernursing.herokuapp.com",
+        ]
+CORS_ORIGIN_ALLOW_ALL = True
