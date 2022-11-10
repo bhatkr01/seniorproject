@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
-import fetcher from "../../fetch/";
+import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router'
 
 export default function Login() {
@@ -19,7 +19,7 @@ export default function Login() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const response = await fetcher("token/", "POST", fields);
+		const response = await fetcher("token/", "POST", 'application/json',JSON.stringify(fields));
 		console.log(response);
 		localStorage.setItem('access_token', response.access);
 		localStorage.setItem('refresh_token', response.refresh)

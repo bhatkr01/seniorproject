@@ -10,12 +10,12 @@ export default function HomePage() {
 	  <ul>
 	  <li>
 	  <Link href="/login">
-	  <a> Login </a>
+	  Login
 	  </Link>
 	  </li>
 	  <li>
 	  <Link href="/shop">
-	  <a> Shop </a>
+	  Shop 
 	  </Link>
 	  </li>
 	  </ul>

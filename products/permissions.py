@@ -14,7 +14,7 @@ class SuperUserAndAuthor(permissions.BasePermission):
             return True
         if request.method in self.edit_methods:
             if request.user.is_authenticated:
-               if request.user.email==obj.email or request.user.is_staff:
+               if request.user.email==obj.product_author.email or request.user.is_staff:
                    return True
             else:
                 return False
