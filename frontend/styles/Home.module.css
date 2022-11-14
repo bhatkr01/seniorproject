@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 0 2rem;
 }
 
@@ -10,8 +10,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+.container{
+  background-image: url("https://luthermarketplace.w3spaces.com/images/pexels-gradienta-7130469.jpg?bypass-cache=20681344");
 }
-
 .footer {
   display: flex;
   flex: 1;
@@ -19,6 +21,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .footer a {

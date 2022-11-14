@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade Apple&display=swap');
+.Nav{
+    background-image: url("https://luthermarketplace.w3spaces.com/images/pexels-gradienta-7130469.jpg?bypass-cache=20681344");
+    height: 60px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-wrap: nowrap;
+}
+.burgerfont{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    padding-right: 20px;
+    color: #878787;
+}
+.burger{
+    width: 60px;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-family: Circular Std;
+    background: black;
+    border-radius: 200px;
+    border: 0px;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+   
+}
+
+/* @media screen and (max-width:960px){
+    transition: 0.8s all ease;
+} */
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .NavLogo {
+      width: 100%;
+      padding: 0;
+      font-size: 0px;
+    }
+    .main{
+        min-height: 100vh;
+        padding: 4rem 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    .menufonts{
+        display: none;
+    }
+    .signin{
+        display: none;
+    }
+    .sellbtn{
+        display: none;
+    }
+    .sellfonts{
+        display: none;
+    }
+    .lutherbell{
+        transform: scale(0.5,0.5) !important;
+        margin-top:-170px !important;
+        margin-right:-1px !important;
+    }
+    .sales{
+        display: none;
+    }
+    .commute{
+        display: none;
+    }
+    .luthercomm{
+        font-size: small;
+    }
+    .lutherstate{
+        font-size: 35px !important;
+        margin-top: 60px;
+    }
+    .getstarted{
+        margin-top: 40px!important;
+    }
+    .backlayerimage{
+        transform: scale(0.5,0.5);
+        margin-left: 20px!important;
+        margin-top: -340px!important;
+        /* float: right!important; */
+        position: absolute;
+    }
+    .backlayerimage2{
+        transform: scale(0.5,0.5);
+        margin-top: -140px!important;
+        float: left;
+        margin-left: 140px!important;
+    }
+  }
+  @media only screen and (max-width:500px) {
+    /* For mobile phones: */
+        .main{
+            min-height: 100vh;
+            padding: 3rem 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            /* transform: scale(0.5,0.5); */
+            /* justify-content: center;
+            align-items: center; */
+        }
+        .menufonts{
+            display: none;
+        }
+        .signin{
+            display: none;
+        }
+        .sellbtn{
+            display: none;
+        }
+        .sellfonts{
+            display: none;
+        }
+        .midsection{
+            transform: scale(0.6,0.6);
+        }
+        .format{
+            transform: scale(0.4,0.4);
+        }
+
+    .backlayerimage{
+        position: absolute;
+        margin-left: -100px!important;
+        margin-top: -550px !important;;
+    }
+    .backlayerimage2{
+        position: absolute;
+        margin-bottom: -500px!important;
+        margin-left: -1000px !important;
+    }
+    .commute{
+        top:0px;
+    }
+    .sales{
+        top: 0px;
+    }
+    .lutherbell{
+        /* margin-top: -800px; */
+        /* position: absolute; */
+        margin-right: -900px !important;
+        float: none;
+        transform: scale(0.2,0.2);
+        position:absolute;
+    }
+    .luthercomm{
+        margin-top: -90px;
+        margin-left: -195px;
+        position: absolute;
+        float: none;
+    }
+    .lutherstate{
+        margin-top: -75px;
+        font-size: x-small;
+        transform: scale(0.5);
+        margin-left: -280px;
+        position: absolute;
+        color: black;
+        display: inline-block;
+        float: none;
+        padding-right: 40px;
+        
+    }
+    .getstarted{
+        margin-top: 65px!important;
+        position: absolute;
+        margin-left: -199px;
+        padding-bottom: 50px;
+    }
+    .commute{
+        margin-left: 100px;
+        float:none;
+        position:absolute;
+        display: none;
+
+    }
+    .sales{
+        float: none;
+        margin-top: -500px;
+        margin-left: -279px;
+        position:absolute;
+        display: none;
+    }
+}
+
+    @media only screen and (min-width:800px) {
+        /* For laptops/ipads: */
+            .burgerfont{
+                display: none;
+            }
+        }
+.NavbarContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    z-index: 1;
+    width: 100%;
+    /* padding: 0 24px; */
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.NavLogo{
+    color: black;
+    justify-self: flex-start;
+    font-size: 20px;
+    display: flex;
+    text-decoration: none;
+    font-family: Homemade Apple;
+    /* margin-right: 450px; */
+    /* float: left; */
+    text-align: center;
+    padding-left: 30px;
+    /* padding: 14px 16px; */
+}
+.menufonts{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787;
+    /* padding: 50px; */
+}
+.sellfonts{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787;
+    /* padding: 50px; */
+    padding-right: 15px;
+}
+.getstarted{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787;
+    /* padding: 50px; */
+    padding-right: 15px;
+    padding-bottom: 60px;
+}
+.signin{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787
+}
+.sellbtn{
+    width: 124px;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-family: Circular Std;
+    background: #2F8EFE;
+    border-radius: 51px;
+    border: 0px;
+    float: right;
+}
+.commute{
+    width: 124px;
+    padding-top: 15px;
+    height: 124px;
+    color: white;
+    text-align: center;
+    /* font-family: Circular Std; */
+    background: #7975E4;
+    border-radius: 10001px;
+    border: 0px;
+    float: right;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    transform: scale(1.3,1.3);
+    margin-right: -380px;
+    margin-top:410px;
+    flex-shrink: 3;
+
+    /* identical to box height */
+}
+.sales{
+    width: 300px;
+    padding-top: 15px;
+    height: 104px;
+    color: black;
+    font-size: 16px;
+    /* font-family: Circular Std; */
+    background: white;
+    border: 0px;
+    float: right;
+    font-weight: normal;
+    transform: scale(1.5,1.5);
+    margin-right: -150px;
+    margin-top:320px;
+    box-shadow: 0px 0px 57px rgba(0, 0, 0, 0.09);
+    border-radius: 23px;
+    opacity: 0.97;
+    padding-left: 20px;
+    transform: scale(0.8,0.8);
+    flex-shrink: 3;
+}
+.gains{
+    float: right;
+    color: green;
+    display: inline;
+    margin-top: -60px;
+    font-size: 18px;
+    margin-right: 20px;
+}
+.commtxt{
+    font-size: 15px;
+    margin-top: -5px;
+    color: white;
+}
+.salestxt{
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: -5px;
+}
+.starter{
+    width: 124px;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-family: Circular Std;
+    background: #2F8EFE;
+    border-radius: 51px;
+    border: 0px;
+}
+.imglayer{
+        background-image: url("https://luthermarketplace.w3spaces.com/images/image_6.png?bypass-cache=15367337");
+        height: 246px;
+        width: 240px;
+        background-repeat: no-repeat;
+        size: 20%;
+        position: relative;
+        padding-left: 50px;
+        justify-content:center;
+        margin: 0 auto;
+        align-items: center;
+        transform: scale(0.7,0.7);
+        /* background-image:cross-fade(50); */
+}
+.imglayer2{
+    background-image: url("https://luthermarketplace.w3spaces.com/images/image_5.png?bypass-cache=15367337");
+    height: 246px;
+    width: 385px;
+    size: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-left: 50px;
+    justify-content:center;
+    margin: 0 auto;
+    align-items: center;
+    transform: scale(0.7,0.7);
+    /* background-image:cross-fade(50); */
+}
+.backlayerimage{
+    /* position: absolute; */
+    padding:30px;
+    width: 555px;
+    height: 330px;
+    left: 123px;
+    top: 1034px;
+    background: #ECF1FF;
+    border-radius: 74px;
+    justify-content:center;
+    align-items: center;
+    float: right;
+    margin-bottom: 90px;
+    margin-right: 50px;
+    margin-top: 10px;
+    flex-shrink: 2;
+}
+.backlayerimage2{
+    padding:30px;
+    width: 555px;
+    height: 330px;
+    left: 1019px;
+    top: 1034px;
+    background: #FFEFF2;
+    border-radius: 74px;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 90px;
+    margin-left: 50px;
+    margin-top: 190px;
+    flex-shrink: 2;
+}
+.linklayer2{
+    text-align: center;
+    margin-left: 37%;
+    top:-70px;
+    position:relative;
+    width: 50%;
+    height: 133px;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 133px;
+    /* identical to box height */
+    color: #FE6987;
+}
+.linklayer1{
+    text-align: center;
+    margin-left: 25%;
+    top:-70px;
+    position:relative;
+    width: 50%;
+    height: 133px;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 133px;
+    /* identical to box height */
+    color: #7795DA;
+}
+.format{
+    display: inline;
+    flex-shrink: 1;
+}
+.midsection{
+    padding-left: 80px;
+    padding-top: 75px;
+    flex-shrink: 1;
+}
+
+.luthercomm{
+    font-weight: lighter;
+    transform: scale(1,0.89);
+    letter-spacing: 8px;
+    margin-bottom: -15px;
+    flex-shrink: 1;
+}
+.lutherstate{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 78px;
+    flex-shrink: 1;
+}
+.lutherbell{
+    background-image: url("https://luthermarketplace.w3spaces.com/images/image_4.png?bypass-cache=22616860");
+    width:400px;
+    height: 600px;
+    border-radius: 1001px;
+    float: right;
+    margin-right: 80px;
+    transform: scale(0.8,0.8);
+    margin-top: -35px;
+    flex-shrink: 1;
+}
