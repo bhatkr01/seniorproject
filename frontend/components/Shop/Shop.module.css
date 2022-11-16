@@ -1,4 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade Apple&display=swap');
+
+
+
+
+@media screen and (max-width:500px) {
+    /* For mobile phones: */
+        .sellbtn{
+            display: none;
+        }
+        .menufonts{
+            display: none;
+        }
+        .signin{
+            display: none;
+        }
+        .btn{
+            display: none;
+        }
+        .btns{
+            display: none;
+        }
+}
+@media screen and (max-width:750px) {
+    /* For mobile phones: */
+        .sellbtn{
+            display: none;
+        }
+        .menufonts{
+            display: none;
+        }
+        .signin{
+            display: none;
+        }
+}
 .Nav{
     background: white;
     height: 60px;
@@ -199,14 +233,43 @@
 .imagegrid-row-2 {
     grid-row: span 2;
 }
-  
-/* Anything under 1024px */
-@media screen and (max-width: 1024px) {
-.imagegrid {
-    --num-cols: 2;
-    --row-height: 200px;
-}
-}
+
+@media screen and (min-width: 1534px) {
+    .imagegrid {
+        --num-cols: 3 !important;
+    }
+
+    .imageformat {
+        transform: scale(0.5,0,5);
+        width: 50%;
+        height: 50%;
+    }
+ }
+
+/* Anything under 828px */
+@media screen and (max-width: 828px) {
+    .imagegrid {
+        --num-cols: 1;
+    }
+
+    .imageformat {
+        transform: scale(0.5,0,5);
+        width: 50%;
+        height: 50%;
+    }
+ }
+ @media screen and (min-width: 829px) {
+    .imagegrid {
+        --num-cols: 2;
+    }
+
+    .imageformat {
+        transform: scale(0.5,0,5);
+        width: 50%;
+        height: 50%;
+    }
+ }
+
 .productlayer{
     width: 491px;
     height: 124px;

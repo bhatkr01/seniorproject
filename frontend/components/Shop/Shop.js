@@ -84,7 +84,7 @@ export default function Login() {
 							<Image
 								src={`${product.product_picture}`}
 								width={500}
-								height={500} />
+								height={500} className={styles.imageformat}/>
 							<div className={styles.productlayer}>
 								<p className = {styles.productdescription}>{product.product_description}</p>
 								<p className = {styles.condbtn}><h1 className = {styles.condbtntxt}>{product.product_condition}</h1></p>
