@@ -24,6 +24,7 @@ class MyUserManager(BaseUserManager):
         user=self.create_user(email, first_name=first_name, last_name=last_name, class_status=class_status,password=password)
         
         user.is_admin=True
+        user.is_verified=True
         user.save(using=self._db)
         return user
         
@@ -43,6 +44,7 @@ class MyUser(AbstractBaseUser):
     class_status=models.CharField(max_length=20, choices=class_list, default="student")
     is_active=models.BooleanField(default=True)
     is_admin=models.BooleanField(default=False)
+    is_verified=models.BooleanField(default=False)
     
     objects=MyUserManager()
     USERNAME_FIELD='email'

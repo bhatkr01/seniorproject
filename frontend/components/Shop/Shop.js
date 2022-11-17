@@ -4,10 +4,10 @@ import {fetcher,fetcher1} from "../../fetch/";
 import { useRouter } from 'next/router'
 import useSWR from "swr";
 import Image from "next/image";
-export default function Login() {
+export default function Shop() {
 	const router=useRouter()
 
-	const { data, error } = useSWR("products/", fetcher1);
+	const { data, error } = useSWR("products/", fetcher);
 	console.log(data)
 	if (!data) return "I am loading"
 	if (error) return "there is error"

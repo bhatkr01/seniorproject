@@ -36,15 +36,15 @@ export default function HomePage() {
 	  <div className={styles.backlayerimage}>
 	  <div class={styles.imglayer2}>
 	  </div>
-	  <Link href="/login">
-				<a className={styles.linklayer1}> RideShare </a>
+	  <Link className={styles.linklayer1} href="/login">
+			RideShare
 	  </Link>
 	  </div>
 	  <div className={styles.backlayerimage2}>
 	  <div class={styles.imglayer}>
 	  </div>
 	  <Link className={styles.linklayer} href="/shop">
-				<a className={styles.linklayer2}> Shop </a>
+			Shop 
 	  </Link>
 	  </div>
 	  </div>
