@@ -7,6 +7,9 @@ export function fetcher(url, request_method, content_type='', data){
 	else if (request_method=="POST"){
 		return post_fetcher(url,request_method, content_type, data)
 	}
+	else if (request_method=="PATCH"){
+		return patch_fetcher(url,request_method, content_type, data)
+	}
 	else if (request_method=="DELETE"){
 		return del_fetcher(url,request_method)
 }
@@ -16,6 +19,7 @@ function post_fetcher (url,request_method,content_type, data){
 	// !content_type? console.log("true"):console.log("false")
 	// 	var header= 
 	// console.log(header)
+	if (url=="login/"){
 	return fetch(baseURL + url, {
 		method: request_method,
 		headers: 
@@ -35,10 +39,42 @@ function post_fetcher (url,request_method,content_type, data){
 		.catch((error) => {
 			console.error("Error:", error);
 		});
+	}
+	else{
+	return fetch(baseURL + url, {
+		method: request_method,
+		headers: 
+		{
+			"Accept": "application/json",
+			"Content-Type": content_type,}
+,	
+		// body: JSON.stringify(data),
+		body: data,
+	})
+		.then((res) => res.json())
+		.catch((error) => {
+			console.error("Error:", error);
+		});
+	}
 };
 
 
 
+function patch_fetcher (url,request_method,content_type, data){
+	return fetch(baseURL + url, {
+		method: request_method,
+		// body: JSON.stringify(data),
+		body: data,
+ headers: {
+      'Content-Type': content_type
+    },
+			 
+	})
+		.then((res) => res.json())
+		.catch((error) => {
+			console.error("Error:", error);
+		});
+};
 
 export function get_fetcher (url) {
 	return fetch(baseURL + url, {

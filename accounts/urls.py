@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import AccountModelViewSet, VerifyEmail, ResetPasswordToken, RequestResetPassword, SetNewPassword,LogoutAPIView
+from accounts.views import AccountModelViewSet, VerifyEmail, ResetPasswordToken, RequestResetPassword, SetNewPassword,LogoutAPIView
 from rest_framework.routers import DefaultRouter
 
 #using routers

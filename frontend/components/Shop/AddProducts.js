@@ -20,6 +20,7 @@ export function AddProducts({data}) {
 		product_date: data?data.product_date:'',
 	});
 	const handleChange = (e) => {
+	console.log(data)
 		if (e.target.name=="product_picture"){
 		setFields({
 			...fields,
@@ -69,7 +70,7 @@ export function AddProducts({data}) {
 					type="text"
 					id="name"
 					name="product_name"
-					value={fields.product_name}
+					value={data?data.product_name:fields.product_name}
 					required
 					onChange={handleChange}
 				/>
@@ -87,7 +88,7 @@ export function AddProducts({data}) {
 					type="text"
 					id="description"
 					name="product_description"
-					value={data?data.product_description:''}
+					value={data?data.product_description:fields.product_description}
 					required
 					onChange={handleChange}
 				/>
@@ -97,7 +98,7 @@ export function AddProducts({data}) {
 					id="condition"
 					name="product_condition"
 					required
-					value={data?data.product_condition:''}
+					value={data?data.product_condition:fields.product_condition}
 					onChange={handleChange}
 				/>
 				<label htmlFor="action">Action</label>
@@ -105,7 +106,7 @@ export function AddProducts({data}) {
 					type="text"
 					id="action"
 					name="product_action"
-					value={data?data.product_action:''}
+					value={data?data.product_action:fields.product_action}
 					required
 					onChange={handleChange}
 				/>
@@ -114,7 +115,7 @@ export function AddProducts({data}) {
 					type="Number"
 					id="price"
 					name="product_price"
-					value={data?data.product_price:''}
+					value={data?data.product_price:fields.product_price}
 					required
 					onChange={handleChange}
 				/>
@@ -123,7 +124,7 @@ export function AddProducts({data}) {
 					type="date"
 					id="date"
 					name="product_date"
-					value={data?data.product_date:''}
+					value={data?data.product_date:fields.product_date}
 					required
 					onChange={handleChange}
 				/>

@@ -26,6 +26,12 @@ export default function Login() {
 		localStorage.setItem('refresh_token', response.refresh)
 		router.push('/')
 	};
+	const logout = async (event) => {
+		event.preventDefault();
+		const response = await fetcher("accounts/logout/", "POST", 'application/json',JSON.stringify({'refresh':localStorage.getItem('refresh_token')}));
+	localStorage.clear();
+		router.push('/')
+	};
 
 	return (
 		<main className={styles.main}>
@@ -77,6 +83,9 @@ export default function Login() {
 		</h4>
 			</form>
 			</div>
+				<button className={styles.submit} type="button" onClick={logout}>
+					Logout
+				</button>
         </div>
 		<div className={styles.imghalf}>
         	<img className={styles.structure} src="https://ak1.ostkcdn.com/images/products/is/images/direct/99e2126500ab99264a06f7bd2ddf7112a46dcb21/Art-Leon-Mid-century-3-seat-Sofa.jpg"></img>

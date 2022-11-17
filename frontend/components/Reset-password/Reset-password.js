@@ -6,23 +6,6 @@ import Link from 'next/link'
 
 export default function ResetPassword() {
 	const router=useRouter()
-	const [fields, setFields] = useState({
-		email: "",
-	});
-	const handleChange = (e) => {
-		setFields({
-			...fields,
-			[e.target.name]: e.target.value,
-		});
-	};
-	
-
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const response = await fetcher("accounts/request-password-reset/", "POST", 'application/json',JSON.stringify(fields));
-		console.log(response);
-		// router.push('/')
-	};
 if (Object.keys(router.query).length === 0)
 	return (<Email />)
 	else return <SetPassword/>
@@ -35,6 +18,8 @@ function SetPassword() {
 	const [fields, setFields] = useState({
 		password: "",
 		password2: "",
+		token:router.query.token,
+		uidb64:router.query.uidb64,
 	});
 	const handleChange = (e) => {
 		setFields({
@@ -46,9 +31,11 @@ function SetPassword() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		console.log(fields)
+
 		const response = await fetcher(`accounts/new-password/${router.query.uidb64}/${router.query.token}`, "PATCH", 'application/json',JSON.stringify(fields));
 		console.log(response);
-		// router.push('/')
+		router.push('/')
 	};
 
 return <main className={styles.main}>
@@ -105,7 +92,7 @@ function Email() {
 		event.preventDefault();
 		const response = await fetcher("accounts/request-password-reset/", "POST", 'application/json',JSON.stringify(fields));
 		console.log(response);
-		// router.push('/')
+		router.push('/')
 	};
 		return <main className={styles.main}>
 			<h1><a href="/" className={styles.marketplace}>Luther Marketplace</a></h1>

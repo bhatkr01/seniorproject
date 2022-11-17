@@ -99,7 +99,7 @@ class ResetPasswordToken(generics.GenericAPIView):
 
 class SetNewPassword(generics.GenericAPIView):
     serializer_class=SetNewPasswordSerializer
-    def patch(self, request):
+    def patch(self, request,*args, **kwargs):
         serializer=self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         return Response({'Success':'Password Reset Success'}, status=status.HTTP_200_OK)
