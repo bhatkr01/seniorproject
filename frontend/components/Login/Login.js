@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 export default function Login() {
 	const router=useRouter()
@@ -19,7 +20,7 @@ export default function Login() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const response = await fetcher("token/", "POST", fields);
+		const response = await fetcher("token/", "POST", 'application/json',JSON.stringify(fields));
 		console.log(response);
 		localStorage.setItem('access_token', response.access);
 		localStorage.setItem('refresh_token', response.refresh)
@@ -61,12 +62,19 @@ export default function Login() {
 					onChange={handleChange}
 				/>
 				<label htmlFor="remmeberme" className={styles.checklabel}>Remember Me</label>
-				<h4 className={styles.forgot}>Forgot Password</h4>
+	  <Link className={styles.linklayer1} href="/reset-password">
+			Forgot Password
+	  </Link>
             	<br></br>
 				<button className={styles.submit} type="button" onClick={handleSubmit}>
 					Sign in
 				</button>
-            	<h4 className={styles.h4txt}>Don't have an account?<a href="/">Create an account</a></h4>
+            	<h4 className={styles.h4txt}>Don't have an account?
+
+	  <Link className={styles.linklayer1} href="/signup">
+			Create an account
+	  </Link>
+		</h4>
 			</form>
 			</div>
         </div>

@@ -1,4 +1,4 @@
-import Shop from "../../components/Shop/Shop.js";
+import {Shop} from "../../components/Shop/";
 
 export default function shop() {
 

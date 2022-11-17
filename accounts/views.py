@@ -16,6 +16,7 @@ from django.utils.encoding import smart_str, force_str, smart_bytes, DjangoUnico
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -51,16 +52,16 @@ class VerifyEmail(generics.GenericAPIView):
         token=request.GET.get('token')
         try:
             payload=jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
-            print(payload)
             user=MyUser.objects.get(id=payload['user_id'])
             if not user.is_verified:
                 user.is_verified=True
                 user.save()
-            return Response({'Success':'Successfully activated'}, status=status.HTTP_201_CREATED)
+            return redirect(settings.FRONTEND_URL)
         except jwt.ExpiredSignatureError as identified:
             return Response({'Error':'Activation link has already Expired'}, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError as identified:
             return Response({'Error':'Invalid Token'}, status=status.HTTP_400_BAD_REQUEST)
+        
 
 
 class RequestResetPassword(generics.GenericAPIView):
@@ -75,7 +76,8 @@ class RequestResetPassword(generics.GenericAPIView):
             token=PasswordResetTokenGenerator().make_token(user)
             current_site=get_current_site(request).domain
             relativeLink=reverse('password-reset-token', kwargs={'uidb64':uidb64, 'token':token})
-            absurl='http://'+current_site+relativeLink+"?token="+str(token)
+            # absurl='http://'+current_site+relativeLink+"?token="+str(token)
+            absurl=settings.FRONTEND_URL+"/reset-password"+"?uidb64="+str(uidb64)+"&token="+str(token)
             email_body="Hi " + user.first_name+'\n Please use the link below to reset your password: \n'+absurl
             send_mail('Reset Your Password Address', email_body, settings.EMAIL_HOST_USER, [user.email])
             return Response({'Success':'We have sent you a link to reset your password'}, status=status.HTTP_200_OK)
