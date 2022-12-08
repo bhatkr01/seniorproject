@@ -193,6 +193,7 @@ ALLOWED_HOSTS = [
         ]
 CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
+        'http://10.28.164.119:3000',
         "http://localhost:8000",
         "https://seniorproject-mvp.herokuapp.com",
         ]
