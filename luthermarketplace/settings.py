@@ -14,6 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from datetime import *
 import os
+import django_heroku
 
 load_dotenv()
 
@@ -193,7 +194,10 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://localhost:8000",
+        "https://seniorproject-mvp.herokuapp.com",
         ]
 CORS_ORIGIN_ALLOW_ALL = True
 
 FRONTEND_URL='http://10.28.164.119:3000'
+django_heroku.settings(locals())
+
