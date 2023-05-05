@@ -199,6 +199,6 @@ CORS_ALLOWED_ORIGINS = [
         ]
 CORS_ORIGIN_ALLOW_ALL = True
 
-FRONTEND_URL='https://seniorprojectmvp.netlify.app'
+FRONTEND_URL='https://lcmarketplace.vercel.app'
 django_heroku.settings(locals())
 
