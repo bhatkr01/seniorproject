@@ -16,10 +16,11 @@ from datetime import *
 import os
 import django_heroku
 
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+load_dotenv(Path(BASE_DIR/'.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -93,19 +94,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'luthermarketplace.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':os.getenv('NAME'),
-        'USER':os.getenv('USER1'),
-        'PASSWORD':os.getenv('PASSWORD'),
-        'HOST':os.getenv('HOST'),
-        'PORT':os.getenv('PORT'),
-    }
-}
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -199,6 +187,7 @@ CORS_ALLOWED_ORIGINS = [
         ]
 CORS_ORIGIN_ALLOW_ALL = True
 
-FRONTEND_URL='https://seniorprojectmvp.netlify.app'
+# FRONTEND_URL='https://lcmarketplace.vercel.app'
+FRONTEND_URL='http://10.28.164.119:3000'
 django_heroku.settings(locals())
 
