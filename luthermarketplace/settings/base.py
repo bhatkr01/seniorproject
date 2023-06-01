@@ -188,6 +188,8 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 # FRONTEND_URL='https://lcmarketplace.vercel.app'
-FRONTEND_URL='http://10.28.164.119:3000'
+# FRONTEND_URL='http://10.28.164.119:3000'
+FRONTEND_URL='https://lcmarketplace.vercel.app'
+
 django_heroku.settings(locals())
 
